@@ -10,7 +10,7 @@ public class Pistolet : MonoBehaviour
 
     private XRGrabInteractable grabInteractable;
     private ParticleSystem gaz;
-    private bool gazState = false;
+    public bool GazState { get; private set; } = false;
 
     void Awake()
     {
@@ -41,7 +41,7 @@ public class Pistolet : MonoBehaviour
         if (gaz == null)
             return;
 
-        if (gazState)
+        if (GazState)
         {
             gaz.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             Debug.Log("Stop");
@@ -52,7 +52,7 @@ public class Pistolet : MonoBehaviour
             Debug.Log("Play");
         }
 
-        gazState = !gazState;
+        GazState = !GazState;
     }
 
     void Update()

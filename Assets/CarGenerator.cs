@@ -25,7 +25,7 @@ public class CarGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentCar == null || currentCar.ShouldDriveOff) {
+        if(currentCar == null || currentCar.DrivingOff) {
             Color random = Random.ColorHSV();
             currentCar = Instantiate(carPrefab, Spawnpoint.transform.position, Spawnpoint.transform.rotation).GetComponent<Car>();
             currentCar.Target = PumpLocation;

@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 8844386875084801546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.84, y: 0, z: -1.76}
+  m_LocalPosition: {x: -1.84, y: 1.72, z: -1.76}
   m_LocalScale: {x: 0.34, y: 0.34, z: 0.34}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -332,15 +332,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.282
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -374,9 +374,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8088100112909292386, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.72
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512243300098982147, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -500,6 +512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda1653cdd510734a8e12a20cc0a3e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrivingOff: 0
+  DrivingIn: 1
+  springStrength: 10
+  damping: 10
 --- !u!1 &2512692785201498753 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 901897122485332503, guid: c2095e5a316b1cd41b3895262ed9951e, type: 3}

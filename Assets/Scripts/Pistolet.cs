@@ -31,9 +31,7 @@ public class Pistolet : MonoBehaviour
 
     public void Activate(ActivateEventArgs args)
     {
-        print("Hello");
         ToggleGaz();
-        //gaz.Play();
     }
 
     private void ToggleGaz()

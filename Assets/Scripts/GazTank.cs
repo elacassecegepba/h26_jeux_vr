@@ -30,20 +30,22 @@ public class GazTank : MonoBehaviour
         socketInteractor = GetComponent<XRSocketInteractor>();
         socketInteractor.selectEntered.AddListener(Activate);
         socketInteractor.selectExited.AddListener(Deactivate);
-
         audioSource = GetComponent<AudioSource>();
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        Fill();
+    }
+
+    void Fill()
+    {
         if (isFilling)
         {
             currentGaz += Time.deltaTime * 2f;
             print(currentGaz);
-            if(currentGaz > maxGaz)
+            if (currentGaz > maxGaz)
             {
                 Overflow();
             }
@@ -56,8 +58,6 @@ public class GazTank : MonoBehaviour
         {
             audioSource.clip = alarm;
             audioSource.Play();
-
-
             isOverflowing = true;
         }
     }
@@ -79,7 +79,6 @@ public class GazTank : MonoBehaviour
         if (pistolet.GazState == true)
         {
             isFilling = true;
-            print(gazFilling.length);
             audioSource.clip = gazFilling;
             audioSource.Play();
         }

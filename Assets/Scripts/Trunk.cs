@@ -13,7 +13,7 @@ public class Trunk : MonoBehaviour
     private void Awake()
     {
         interact = InputSystem.actions.FindAction("Interact");
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +30,7 @@ public class Trunk : MonoBehaviour
     {
        
     }
-    void ToggleTrunk()
+    public void ToggleTrunk()
     {
         animator.SetBool("TrunkOpen", !animator.GetBool("TrunkOpen"));
     }

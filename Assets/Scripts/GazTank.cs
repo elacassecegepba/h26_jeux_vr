@@ -44,10 +44,11 @@ public class GazTank : MonoBehaviour
         if (isFilling)
         {
             currentGaz += Time.deltaTime * 2f;
-            print(currentGaz);
+            
             if (currentGaz > maxGaz)
             {
                 Overflow();
+                currentGaz = maxGaz;
             }
         }
     }
@@ -84,12 +85,26 @@ public class GazTank : MonoBehaviour
         }
 
     }
+    private bool TankIsFull()
+    {
+        if(currentGaz>= maxGaz)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public void Deactivate(SelectExitEventArgs args)
     {
         audioSource.Stop();
         isFilling = false;
         StopOverflow();
-
+        if (TankIsFull())
+        {
+            GetComponentInParent<Car>().DriveOff();
+        }
     }
 }

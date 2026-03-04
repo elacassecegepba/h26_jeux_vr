@@ -32,6 +32,7 @@ public class Trunk : MonoBehaviour
     }
     public void ToggleTrunk()
     {
+        print("Hello");
         animator.SetBool("TrunkOpen", !animator.GetBool("TrunkOpen"));
     }
 
